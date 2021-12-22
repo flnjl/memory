@@ -1,0 +1,153 @@
+@charset "UTF-8";
+body {
+	font-family: sans-serif;
+}
+
+/* la longueur de main est fixée à :
+ * nombre de colonnes * taille case + bordures interne.
+ * le margin auto permet, associé à la longueur, de centrer le bloc.
+ */
+main {
+	display: block;
+	width: 715px;  /* = 7 * 100 + 6*2.5px */
+	margin: auto;
+}
+h1 {
+	text-align: center;
+}
+/* CSS permet de définir la grille de 4 lignes et 7 colonnes.
+ * On y ajoute la valeur de séparation entre les case (2.5px).
+ */
+#plateau {
+	display: grid;
+	grid-template-rows: repeat(4, 100px);
+	grid-template-columns: repeat(7, 100px);
+	grid-gap: 2.5px;
+	grid-auto-flow: column;
+}
+#affichage_temps {
+	margin: 5px auto;
+	width: 300px;
+	text-align: center;
+}
+
+/* adaptation des dimensions pour les écrans dont
+ * la largeur est inférieure ou égale à 800px
+ */
+@media screen and (max-width: 800px) {
+	main {
+		width: 407.5px;
+	}
+	#plateau {
+		grid-template-rows: repeat(7, 100px);
+		grid-template-columns: repeat(4, 100px);
+	}
+}
+
+.carte {
+	background-color: grey;
+	border: solid 1px black;
+}
+
+/* quand l'utilisateur passe sur une carte (:hover)
+ * le curseur de la souris est de la forme pointeur.
+ */
+.carte:hover {
+	cursor: pointer;
+}
+
+/* on peut donner du style avec les attributs HTML des élements.
+ * Les éléments qui ont un attribut data-carte et une classe
+ * affichee ou trouvee ont comme image de fond l'image des cartes.
+ */
+[data-carte].affichee,
+[data-carte].trouvee {
+	background: url('../img/cards.png');
+}
+
+[data-carte="0"].affichee,
+[data-carte="0"].trouvee {
+	background-position: 0 0;
+}
+[data-carte="1"].affichee,
+[data-carte="1"].trouvee {
+	background-position: 0 100px;
+}
+[data-carte="2"].affichee,
+[data-carte="2"].trouvee {
+	background-position: 0 200px;
+}
+[data-carte="3"].affichee,
+[data-carte="3"].trouvee {
+	background-position: 0 300px;
+}
+[data-carte="4"].affichee,
+[data-carte="4"].trouvee {
+	background-position: 0 400px;
+}
+[data-carte="5"].affichee,
+[data-carte="5"].trouvee {
+	background-position: 0 500px;
+}
+[data-carte="6"].affichee,
+[data-carte="6"].trouvee {
+	background-position: 0 600px;
+}
+[data-carte="7"].affichee,
+[data-carte="7"].trouvee {
+	background-position: 0 700px;
+}
+[data-carte="8"].affichee,
+[data-carte="8"].trouvee {
+	background-position: 0 800px;
+}
+[data-carte="9"].affichee,
+[data-carte="9"].trouvee {
+	background-position: 0 900px;
+}
+[data-carte="10"].affichee,
+[data-carte="10"].trouvee {
+	background-position: 0 1000px;
+}
+[data-carte="11"].affichee,
+[data-carte="11"].trouvee {
+	background-position: 0 1100px;
+}
+[data-carte="12"].affichee,
+[data-carte="12"].trouvee {
+	background-position: 0 1200px;
+}
+[data-carte="13"].affichee,
+[data-carte="13"].trouvee {
+	background-position: 0 1300px;
+}
+[data-carte="14"].affichee,
+[data-carte="14"].trouvee {
+	background-position: 0 1400px;
+}
+[data-carte="15"].affichee,
+[data-carte="15"].trouvee {
+	background-position: 0 1500px;
+}
+[data-carte="16"].affichee,
+[data-carte="16"].trouvee {
+	background-position: 0 1600px;
+}
+[data-carte="17"].affichee,
+[data-carte="17"].trouvee {
+	background-position: 0 1700px;
+}
+[data-carte="18"].affichee,
+[data-carte="18"].trouvee {
+	background-position: 0 1800px;
+}
+
+#progress-bar {
+	display: inline-block;
+	height: 15px;
+	width: 200px;
+}
+label[for="progress-bar"] {
+	font-size: 12px;
+}
+
