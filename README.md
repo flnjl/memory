@@ -36,14 +36,14 @@ Les images des cartes sont une image sous forme de sprites dans le répertoire `
 ### Fonctionnement
 - HTML 
   - affiche la page de base avec les éléments conteneurs du jeu
-  - appel les styles et le javascript
+  - appelle les styles et le javascript
 - Javascript 
   - tire les cartes de façon aléatoire (on affiche moins de cartes que ce que le sprite propose) et les ordonne de façon aléatoire
   - il crée les éléments HTML des cartes et les place sur le plateau (insertion dans le document HTML, DOM)
 - CSS gère l'affichage de la grille
 - Javascript
   - ajoute la gestion des évènements clic utilisateur sur les cartes
-  - appel le serveur pour récupérer les meilleurs temps des parties déjà effectuées
+  - appelle le serveur pour récupérer les meilleurs temps des parties déjà effectuées
  - Le serveur PHP (fichier `serveur.php`)
    - réceptionne la requête `GET`
    - initialise la base de données SQLite si elle n'existe pas
@@ -54,7 +54,7 @@ Les images des cartes sont une image sous forme de sprites dans le répertoire `
   - la partie est gérée entre la gestion des évènements clic sur les cartes et le minuteur
 - CSS gère l'affichage des cartes : cartes cachées, retournées, trouvées
 - En fin de partie, Javascript
-  - si toutes les cartes sont retournées, appel le serveur PHP pour enregistrer le temps
+  - si toutes les cartes sont retournées, appelle le serveur PHP pour enregistrer le temps
   - affichage d'un message Gagné / Perdu avec proposition de relancer le jeu
 
 ### Notes
